@@ -6,7 +6,8 @@ import tollroad.TollManager;
 public class Example {
 
     public static void main(String[] args) throws Exception {
-    	
+    	/// this is my second commit ! 
+    	/// this will be shown only after i commit ! 
         TollManager t = new TollManager();
         t.addSegment("MITO", "Milano", "Torino", 7.0);
         t.addSegment("TOSV", "Torino", "Savona", 6.0);
