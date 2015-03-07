@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<center>
+<h2>Toll road management<br>
+</h2>
+</center>
+Write a program to manage payments on toll roads.
+All classes must belong to package <code>tollroad</code>
+<h3>R1 - Customer management<br>
+</h3>
+<br>
+Interaction with the system takes place through class <b>TollManager</b>.
+New customers can be added by means of method <b>addCustomer</b>, which
+accepts as arguments the SSN, first and last name.
+<br>
+It is possible to access information about a user, given her SSN, through method
+<b>getCustomer</b>. This method returns the last name of the customer and throws
+the <b>CustomerNotPresent</b> exception if the customer is not present.
+<br>
+<br>
+<h3>R2 - Segment management<br>
+</h3>
+It is possible to add new segments through the method <b>addSegment</b> that 
+accepts the code of the segment, the name of the starting location, the name
+of the arrival location, and the toll price.
+<br>
+By means of method <b>getSegment()</b> it is possible to get the price of
+a segment given its code, if there is no segment with the given code
+a <b>SegmentNotPresent</b> exception is thrown.
+<br>
+<h3>R3 - Payment management</h3>
+The transit of a customer through a segment can be signaled by means
+of the method <b>transitOnSegment()</b>, which accepts as arguments
+the customer's SSN, and the segment code.
+<br>
+The corresponding toll price must be added to the customer's debit.
+Each customer has a given credit threshold (10.0 by default or set
+through method <b>setCreditThreshold()</b>); if the customer
+debit is greater than the credit threshold the method throws a
+<b>CreditThresholdReached</b> exception after having incremented the debit.
+<br>
+Method <span style="font-weight: bold;">totalDebt()</span> 
+	returns the total debt accumulated by a customer. <br>
+Method <span style="font-weight: bold;">numberTransit()</span> 
+	returns the number of transits made by a customer<br>
+Method <span style="font-weight: bold;">segments</span>()
+	returns the set of codes of segments passed by a customer (without repetitions)<br>
+Method <span style="font-weight: bold;">resetCustomer()</span>
+	resets the record of segment transits and the customer's debit.<br>
+All the above methods in R3 accept as argument the customer SSN 
+and throw a <span style="font-weight: bold;">CustomerNotPresent</span> exception.<br>
+<br>
+<h3>R4 - Statistics<br>
+</h3>
+Method <span style="font-weight: bold;">countTransit()</span>
+	returns the total number of tansits recorded by the system.<br>
+Method <span style="font-weight: bold;">totalDebt()</span>
+	returns the sum of all debits.<br>
+Method <span style="font-weight: bold;">mostTransitedSegment()</span>
+	returns the code of the segment having the highest number of transits
+	recorded by the system. 
+	In case of tie the first code in alphabetic orded is returned.<br>
+<br>
+<br>
+</body>
+</html>
